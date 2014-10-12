@@ -12,12 +12,37 @@ $(document).ready(function(){
     .append('<ul></ul>')
     .append('<ul></ul>')
     .append('<ul></ul>')
+    .append('<ul></ul>')
+    .append('<ul></ul>')
+    .append('<ul></ul>')
+    .append('<ul></ul>')
+    .append('<ul></ul>')
+    .append('<ul></ul>')
+    .append('<ul></ul>')
+    .append('<ul></ul>')
+    .append('<ul></ul>')
+    .append('<ul></ul>')
+    .append('<ul></ul>')
+    .append('<ul></ul>')
   
   /* inside each unordered list, add 4 list items */
   $('ul').append('<li></li>')
     .append('<li></li>')
     .append('<li></li>')
     .append('<li></li>')
+    .append('<li></li>')
+    .append('<li></li>')
+    .append('<li></li>')
+    .append('<li></li>')
+    .append('<li></li>')
+    .append('<li></li>')
+    .append('<li></li>')
+    .append('<li></li>')
+    .append('<li></li>')
+    .append('<li></li>')
+    .append('<li></li>')
+    .append('<li></li>')
+    
 
   /* Give list items styling */
   $('li').css({
@@ -82,12 +107,12 @@ function newGrid(){
   }
  
   /* Creates for loop, creates unordered lists (rows) for height  */
-  for (var i=0; i<=height;i++){
+  for (var i=0; i<height;i++){
     $('.container').append('<ul></ul>');
   }
 
   /* Creates for loop, creates list items (rows) for height  */
-  for (var i=0; i<=width;i++){
+  for (var i=0; i<width;i++){
     $('ul').append('<li></li>');
   }
 
