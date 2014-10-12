@@ -5,7 +5,7 @@ $(document).ready(function(){
   $('body').prepend('<div class="container"></div>')
   
   /* inside container place a <button> */
-  $('.container').prepend('<button onclick="newGrid(); return false">New Grid</button>')
+  $('.container').prepend('<button onclick="newGrid(); return false">Custom Grid</button>')
   
     /* after button create 4 unordered lists */
     .append('<ul></ul>')
@@ -28,13 +28,13 @@ $(document).ready(function(){
     border: '1px black solid',
     margin: '0 1px',
 	
-	/* This keeps padding & margin inside the box. */
+  /* This keeps padding & margin inside the box. */
     'box-sizing': 'border-box'
 	  
-  /* Create a function so that on-hover the background color is changed. */
+  /* Create a function so that on-hover (of li's selected above) the background color is changed. */
   }).hover(function() {
   /* "this" is referring to the li's selected above */
-    $(this).css('background-color','blue')
+    $(this).css('background-color','purple')
   });
 
   /* Some basic element styling */
@@ -54,33 +54,46 @@ $(document).ready(function(){
   });
 });
 
-/*function newGrid(){
+/* Provides functionality to the button */
+function newGrid(){
 
+  /* Changes li color back to white */
   $('li').css('background-color','white');
+	
+  /* Removes the whole wrapper div */
   $('.container').remove()
+  
+  /* Add its back in again clear slate. */
   $('body').prepend('<div class="container"></div>')
 
+  /* Asks user for a width, places it into var */
   var width = prompt('Enter a new grid width');
 
-  if(width > 90){
-    var width = prompt('Grid width must be 90 or less');
+  /* Checks if width meets requirements, endlessly prompts if it is not.  */
+  while(width > 40){
+    var width = prompt('Grid width must be 40 or less');
   }
 
   var height = prompt('Enter new grid height');
 
-  if(height > 40) {
+  /* Checks if height meets requirements, endlessly prompts if it is not.  */
+  while(height > 40) {
     var height = prompt('Grid height must be 40 or less');
   }
-
+ 
+  /* Creates for loop, creates unordered lists (rows) for height  */
   for (var i=0; i<=height;i++){
     $('.container').append('<ul></ul>');
   }
 
+  /* Creates for loop, creates list items (rows) for height  */
   for (var i=0; i<=width;i++){
     $('ul').append('<li></li>');
   }
 
-  $('.container').prepend('<button onclick="newGrid(); return false">New Grid</button>')
+	
+  /* Adds styling for newly created boxes - Ideally this should be placed into its own function thus not repeating code twice */
+  $('.container').prepend('<button onclick="newGrid(); return false">Custom Grid</button>')
 
     $('li').css({
     display: 'inline-block',
@@ -91,7 +104,7 @@ $(document).ready(function(){
     margin: '0 1px',
     'box-sizing': 'border-box'
   }).hover(function() {
-    $(this).css('background-color','blue')
+    $(this).css('background-color','purple')
   });
 
   $('.container').css({
@@ -108,4 +121,4 @@ $(document).ready(function(){
     padding: '10px',
     'font-size': '16px'
   });
-};*/
+};
