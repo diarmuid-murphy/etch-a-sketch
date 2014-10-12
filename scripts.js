@@ -8,41 +8,14 @@ $(document).ready(function(){
   $('.container').prepend('<button onclick="newGrid(); return false">Custom Grid</button>')
   
     /* after button create 4 unordered lists */
-    .append('<ul></ul>')
-    .append('<ul></ul>')
-    .append('<ul></ul>')
-    .append('<ul></ul>')
-    .append('<ul></ul>')
-    .append('<ul></ul>')
-    .append('<ul></ul>')
-    .append('<ul></ul>')
-    .append('<ul></ul>')
-    .append('<ul></ul>')
-    .append('<ul></ul>')
-    .append('<ul></ul>')
-    .append('<ul></ul>')
-    .append('<ul></ul>')
-    .append('<ul></ul>')
-    .append('<ul></ul>')
-  
-  /* inside each unordered list, add 4 list items */
-  $('ul').append('<li></li>')
-    .append('<li></li>')
-    .append('<li></li>')
-    .append('<li></li>')
-    .append('<li></li>')
-    .append('<li></li>')
-    .append('<li></li>')
-    .append('<li></li>')
-    .append('<li></li>')
-    .append('<li></li>')
-    .append('<li></li>')
-    .append('<li></li>')
-    .append('<li></li>')
-    .append('<li></li>')
-    .append('<li></li>')
-    .append('<li></li>')
-    
+    for(i=0; i<16; i++){
+	   $('.container').append('<ul></ul>')
+	}
+	
+	/* inside each unordered list, add 4 list items */
+	for(i=0; i<16; i++){
+	  $('ul').append('<li></li>')
+	}
 
   /* Give list items styling */
   $('li').css({
